@@ -5,12 +5,17 @@
     <link rel="stylesheet" href="/stylesheets/style.css" />
   </head>
   <body>
-    <% messages.forEach(message => { %>
-    <div class="message">
-      <div class="message-text"><%= message.text %></div>
-      <div class="message-user"><%= message.user %></div>
-      <div class="message-added"><%= message.added %></div>
+    <div class="wrapper">
+      <a href="/new"><button class="new-message">Add new message</button></a>
+      <div class="messages">
+        <% messages.forEach(message => { %>
+        <div class="message">
+          <div class="message-text"><%= message.text %></div>
+          <div class="message-user"><%= message.user %></div>
+          <div class="message-added"><%= message.added.toDateString() %></div>
+        </div>
+        <% }) %>
+      </div>
     </div>
-    <% }) %>
   </body>
 </html>
